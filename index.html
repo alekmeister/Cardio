@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+    <title>Кардио - Карта Твоих Тренировок</title>
+  </head>
+  <body>
+
+<svg style="display: none;">
+  <symbol id="cross" viewBox="0 0 512 512">
+    <g>
+      <path
+        d="M268.064,256.75l138.593-138.593c3.124-3.124,3.124-8.189,0-11.313c-3.125-3.124-8.189-3.124-11.314,0L256.75,245.436  
+         L118.157,106.843c-3.124-3.124-8.189-3.124-11.313,0c-3.125,3.124-3.125,8.189,0,11.313L245.436,256.75L106.843,395.343  
+          c-3.125,3.125-3.125,8.189,0,11.314c1.562,1.562,3.609,2.343,5.657,2.343s4.095-0.781,5.657-2.343L256.75,268.064l138.593,138.593  
+           c1.563,1.562,3.609,2.343,5.657,2.343s4.095-0.781,5.657-2.343c3.124-3.125,3.124-8.189,0-11.314L268.064,256.75z" />
+    </g>
+  </symbol>
+</svg>
+
+    <div class="sidebar">
+      <img src="icon.png" alt="icon" class="icon" />
+      <ul class="workouts">
+        
+        <form class="form hidden">
+          <div class="form__row">
+            
+            <label class="form__label">Тип</label>
+            
+            <select class="form__input form__input--type">
+              <option value="running">Пробежка</option>
+              <option value="cycling">Велосипед</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Расстояние</label>
+            <input class="form__input form__input--distance" placeholder="км" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Длительность</label>
+            <input
+              class="form__input form__input--duration"
+              placeholder="мин"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Темп</label>
+            <input
+              class="form__input form__input--temp"
+              placeholder="шаг/мин"
+            />
+          </div>
+          <div class="form__row form__row--hidden">
+            <label class="form__label">Подъём</label>
+            <input
+              class="form__input form__input--climb"
+              placeholder="метров"
+            />
+          </div>
+          
+          <button class="form__btn">OK</button>
+          
+        </form>
+
+      </ul>
+
+      <p class="footer__copyright">
+        
+      </p>
+    </div>
+
+    <div id="map"></div>
+  </body>
+</html>
